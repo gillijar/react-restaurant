@@ -1,9 +1,12 @@
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { ReactComponent as CartLogo } from "../../icons/shopping-cart.svg";
 import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
+  const cartNumberOfItems = useSelector((state) => state.cart.totalQuantity);
+
   return (
     <nav className={classes.nav}>
       <ul>
@@ -20,7 +23,9 @@ const MainNavigation = () => {
         <li>
           <NavLink to="/cart" className={classes["nav-cart"]}>
             <CartLogo className={classes["nav-cart__logo"]} />
-            <div className={classes["nav-cart__logo--badge"]}>0</div>
+            <div className={classes["nav-cart__logo--badge"]}>
+              {cartNumberOfItems}
+            </div>
           </NavLink>
         </li>
       </ul>

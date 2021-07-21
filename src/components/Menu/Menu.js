@@ -15,7 +15,12 @@ const Menu = () => {
         </p>
         <ul>
           {DUMMY_ITEMS.map((item) => (
-            <MenuItems key={item.id} title={item.title} price={item.price} />
+            <MenuItems
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              price={item.price}
+            />
           ))}
         </ul>
       </div>
