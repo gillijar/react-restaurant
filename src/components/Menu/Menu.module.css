@@ -1,0 +1,11 @@
+.menu {
+  padding: 3rem 0;
+  width: 70%;
+  margin: 3.5rem auto;
+  background: white;
+  border-radius: 2rem;
+}
+
+.menu ul {
+  list-style: none;
+}

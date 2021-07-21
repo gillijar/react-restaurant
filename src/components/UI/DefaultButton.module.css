@@ -1,0 +1,15 @@
+.button {
+  border-radius: 3rem;
+  border: none;
+  background: #ff8c42;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  color: white;
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+
+.button:hover {
+  transform: scale(1.075);
+  background: #ffc477;
+}

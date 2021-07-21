@@ -1,6 +1,7 @@
 .header {
-  padding: 2rem 8rem;
-  background-color: #999;
+  height: 12vh;
+  padding: 0 8rem;
+  background-color: #4e598c;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,4 +9,6 @@
 
 .header__title {
   font-size: 2.75rem;
+  font-weight: 500;
+  color: #fcaf58;
 }

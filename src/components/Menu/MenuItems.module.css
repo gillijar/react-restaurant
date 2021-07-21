@@ -1,0 +1,38 @@
+.menu-item {
+  padding: 1rem 2.5rem;
+  background: #999;
+  width: 45%;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+
+.menu-item:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.menu-item__details {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.menu-item__buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.more-info {
+  margin-right: 1rem;
+}
+
+.user-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 1.6rem;
+}
+
+.user-btn:hover {
+  transform: scale(1);
+}
