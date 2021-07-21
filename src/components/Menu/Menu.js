@@ -9,12 +9,16 @@ const Menu = () => {
 
   return (
     <section className={classes.menu}>
-      <p>You have 3 items in your cart</p>
-      <ul>
-        {DUMMY_ITEMS.map((item) => (
-          <MenuItems key={item.id} title={item.title} price={item.price} />
-        ))}
-      </ul>
+      <div className={classes.menu__container}>
+        <p className={classes["menu__container--cart-desc"]}>
+          You have 3 items in your cart
+        </p>
+        <ul>
+          {DUMMY_ITEMS.map((item) => (
+            <MenuItems key={item.id} title={item.title} price={item.price} />
+          ))}
+        </ul>
+      </div>
     </section>
   );
 };

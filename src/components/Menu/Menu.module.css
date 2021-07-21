@@ -9,3 +9,14 @@
 .menu ul {
   list-style: none;
 }
+
+.menu__container {
+  width: 60%;
+  margin: 0 auto;
+  text-align: start;
+}
+
+.menu__container--cart-desc {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
