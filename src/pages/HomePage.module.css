@@ -5,27 +5,21 @@
 
 .home-page__hero {
   position: relative;
-}
-
-.home-page img {
-  width: 100%;
-  display: block;
-  margin: 0 auto;
-  filter: opacity(55%);
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-page h1 {
   font-size: 5rem;
   color: #fcaf58;
   text-shadow: 0.5rem 0.5rem 0.75rem black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
-.home-page button {
-  margin: 5rem auto;
+.menu-link {
+  margin: 2rem auto;
 }
 
 .button {
