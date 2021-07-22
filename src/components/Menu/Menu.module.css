@@ -1,9 +1,9 @@
 .menu {
-  padding: 3rem 0;
   width: 70%;
   margin: 3.5rem auto;
   background: white;
   border-radius: 2rem;
+  text-align: center;
 }
 
 .menu ul {
@@ -11,12 +11,18 @@
 }
 
 .menu__container {
+  padding: 3rem 0;
   width: 60%;
   margin: 0 auto;
   text-align: start;
 }
 
-.menu__container--cart-desc {
-  font-size: 1.4rem;
+.menu__container h2 {
+  font-size: 2rem;
   margin-bottom: 1.5rem;
+}
+
+.error {
+  text-align: center;
+  font-size: 1.6rem;
 }

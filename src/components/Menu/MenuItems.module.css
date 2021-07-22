@@ -3,6 +3,8 @@
   background: #999;
   margin: 0 auto;
   border-radius: 1rem;
+  border: 1.5px solid black;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .menu-item:not(:last-child) {
@@ -28,6 +30,7 @@
 }
 
 .user-btn {
+  border-radius: 0.75rem;
   padding: 0.75rem 1.25rem;
   font-size: 1.6rem;
 }
