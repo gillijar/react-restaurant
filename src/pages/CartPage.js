@@ -1,5 +1,7 @@
+import Cart from "../components/Cart/Cart";
+
 const CartPage = () => {
-  return <p>This is the cart page!</p>;
+  return <Cart />;
 };
 
 export default CartPage;
