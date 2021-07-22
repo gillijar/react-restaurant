@@ -1,0 +1,11 @@
+.cart {
+  width: 70%;
+  margin: 3.5rem auto;
+  background: white;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.cart-container {
+  padding: 2rem 0;
+}
