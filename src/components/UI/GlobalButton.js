@@ -1,6 +1,6 @@
-import classes from "./DefaultButton.module.css";
+import classes from "./GlobalButton.module.css";
 
-const DefaultButton = (props) => {
+const GlobalButton = (props) => {
   return (
     <button
       type={props.type}
@@ -12,4 +12,4 @@ const DefaultButton = (props) => {
   );
 };
 
-export default DefaultButton;
+export default GlobalButton;
