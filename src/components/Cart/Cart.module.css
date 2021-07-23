@@ -3,9 +3,39 @@
   margin: 3.5rem auto;
   background: white;
   border-radius: 2rem;
-  text-align: center;
+}
+
+.cart ul {
+  list-style: none;
 }
 
 .cart-container {
   padding: 2rem 0;
+  width: 55%;
+  margin: 0 auto;
+}
+
+.cart-container__total-price {
+  padding: 0 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: end;
+}
+
+.cart-container__total-price label {
+  font-weight: bold;
+}
+
+.cart-container__btn {
+  padding: 2rem;
+  text-align: end;
+}
+
+.cart-container__checkout {
+  padding: 1rem 2.5rem;
+}
+
+.cart-container__checkout:hover {
+  box-shadow: none;
+  transform: none;
 }
