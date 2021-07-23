@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import classes from "./HomePage.module.css";
 import HeroImg from "../img/homepage-hero.jpg";
-import DefaultButton from "../components/UI/DefaultButton";
+import GlobalButton from "../components/UI/GlobalButton";
 
 const HomePage = () => {
   const backgroundImage = {
@@ -20,9 +20,9 @@ const HomePage = () => {
       <div className={classes["home-page__hero"]} style={backgroundImage}>
         <h1>Don't starve, just order!</h1>
         <Link to="/menu" className={classes["menu-link"]}>
-          <DefaultButton type="button" userClass={classes.button}>
+          <GlobalButton type="button" userClass={classes.button}>
             View Our Menu
-          </DefaultButton>
+          </GlobalButton>
         </Link>
       </div>
     </section>
