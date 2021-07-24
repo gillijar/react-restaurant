@@ -18,9 +18,21 @@ const cartSlice = createSlice({
         });
       } else {
         existingItem.quantity++;
-        existingItem.totalPrice = existingItem.totalPrice + newItem.price;
+        existingItem.totalPrice += newItem.price;
       }
       state.totalCartPrice = state.totalCartPrice + newItem.price;
+    },
+    removeItemFromCart(state, action) {
+      const itemId = action.payload;
+      const selectedItem = state.items.find((item) => item.id === itemId);
+      selectedItem.quantity--;
+      selectedItem.totalPrice -= selectedItem.price;
+      state.totalQuantity--;
+      state.totalCartPrice -= selectedItem.price;
+      if (selectedItem.quantity === 0) {
+        const index = state.items.indexOf(selectedItem);
+        state.items.splice(index, 1);
+      }
     },
   },
 });
