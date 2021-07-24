@@ -1,0 +1,50 @@
+.form {
+  margin: 2.75rem 0;
+  padding: 2.75rem 0 0 0;
+  border-top: 2px solid #999;
+}
+
+.form form {
+  margin: 0 auto;
+  width: 65%;
+}
+
+.form__section:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.form input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.form label {
+  display: block;
+  text-align: start;
+  font-size: 1.6rem;
+}
+
+.form__cancel {
+  background: none;
+  color: #000;
+  border: none;
+  padding: 1rem 2.5rem;
+  margin-right: 1rem;
+}
+
+.form__order {
+  padding: 1rem 2.5rem;
+}
+
+.form__order:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.form__cancel:hover {
+  background: #999;
+  color: white;
+  transform: none;
+  box-shadow: none;
+}

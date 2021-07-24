@@ -1,13 +1,16 @@
 import { useSelector } from "react-redux";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 import CartItem from "./CartItem";
 import GlobalButton from "../UI/GlobalButton";
+import CartForm from "./CartForm";
 import classes from "./Cart.module.css";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const totalCartPrice = useSelector((state) => state.cart.totalCartPrice);
+
+  const [checkoutReady, setCheckoutReady] = useState(false);
 
   const cartItemContent = cartItems.map((item) => (
     <CartItem
@@ -19,6 +22,10 @@ const Cart = () => {
       quantity={item.quantity}
     />
   ));
+
+  const readyToCheckout = () => {
+    setCheckoutReady((prevState) => !prevState);
+  };
 
   return (
     <section className={classes.cart}>
@@ -33,11 +40,22 @@ const Cart = () => {
               </div>
             </div>
             <ul>{cartItemContent}</ul>
-            <div className={classes["cart-container__btn"]}>
-              <GlobalButton userClass={classes["cart-container__checkout"]}>
-                Checkout
-              </GlobalButton>
-            </div>
+            {!checkoutReady && (
+              <div className={classes["cart-container__btn"]}>
+                <GlobalButton
+                  onClick={readyToCheckout}
+                  userClass={classes["cart-container__checkout"]}
+                >
+                  Checkout
+                </GlobalButton>
+              </div>
+            )}
+            {checkoutReady && (
+              <CartForm
+                btnClass={classes["cart-container__btn"]}
+                cancelCheckout={readyToCheckout}
+              />
+            )}
           </Fragment>
         )}
       </div>

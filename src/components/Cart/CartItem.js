@@ -20,6 +20,10 @@ const CartItem = (props) => {
     );
   };
 
+  const removeItemFromCart = () => {
+    dispatch(cartActions.removeItemFromCart(id));
+  };
+
   return (
     <li className={classes["cart-item"]}>
       <figure>
@@ -33,7 +37,7 @@ const CartItem = (props) => {
           <div className={classes["cart-item__price"]}>
             <p>${props.totalPrice.toFixed(2)}</p>
           </div>
-          <button>-</button>
+          <button onClick={removeItemFromCart}>-</button>
           <button onClick={addItemToCart}>+</button>
         </div>
       </figure>
