@@ -18,3 +18,9 @@ body {
   line-height: 1.6;
   background: #4e598c;
 }
+
+/* Form validation classes */
+.invalid {
+  border: 1.5px solid rgb(255, 1, 1);
+  background: rgba(255, 1, 1, 0.25);
+}

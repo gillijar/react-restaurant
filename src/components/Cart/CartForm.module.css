@@ -6,7 +6,8 @@
 
 .form form {
   margin: 0 auto;
-  width: 65%;
+  width: 70%;
+  text-align: start;
 }
 
 .form__section:not(:last-child) {
@@ -15,8 +16,15 @@
 
 .form input {
   width: 100%;
-  padding: 0.5rem;
-  font-size: 1.4rem;
+  padding: 0.75rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: 1.5px solid #000;
+  outline: none;
+}
+
+.form input:focus {
+  background: rgba(14, 14, 255, 0.15);
 }
 
 .form label {
@@ -47,4 +55,9 @@
   color: white;
   transform: none;
   box-shadow: none;
+}
+
+.errorMsg {
+  font-size: 1.6rem;
+  color: red;
 }
