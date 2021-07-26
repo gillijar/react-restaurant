@@ -26,6 +26,9 @@ const MenuItems = (props) => {
         <p>{props.title}</p>
         <p>${props.price}</p>
       </div>
+      <p className={classes["menu-items__details--description"]}>
+        {props.description}
+      </p>
       <div className={classes["menu-item__buttons"]}>
         <GlobalButton
           userClass={classes["user-btn"]}

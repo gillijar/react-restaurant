@@ -20,6 +20,11 @@
   font-size: 2rem;
 }
 
+.menu-items__details--description {
+  font-size: 1.6rem;
+  padding: 1rem 0 2.5rem 0;
+}
+
 .menu-item__buttons {
   display: flex;
   justify-content: flex-end;

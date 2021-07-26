@@ -65,6 +65,7 @@ const Menu = () => {
                   id={item.id}
                   title={item.title}
                   price={item.price}
+                  description={item.description}
                 />
               ))}
             </ul>
