@@ -16,3 +16,9 @@
 .header a {
   text-decoration: none;
 }
+
+@media only screen and (max-width: 738px) {
+  .header {
+    padding: 0 3rem;
+  }
+}

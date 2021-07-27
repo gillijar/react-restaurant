@@ -9,6 +9,9 @@ const MainNavigation = () => {
 
   return (
     <nav className={classes.nav}>
+      <div className={classes["mobile-nav"]}>
+        <button></button>
+      </div>
       <ul>
         <li>
           <NavLink activeClassName={classes.active} to="/home">

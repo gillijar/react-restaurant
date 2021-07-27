@@ -53,3 +53,43 @@
   color: white;
   border-bottom: 0.45rem solid white;
 }
+
+.mobile-nav {
+  display: none;
+}
+
+@media only screen and (max-width: 738px) {
+  .nav ul {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  .mobile-nav button {
+    height: 0.35rem;
+    width: 4rem;
+    background: white;
+    position: relative;
+    border: none;
+  }
+
+  .mobile-nav button::before,
+  .mobile-nav button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+  }
+
+  .mobile-nav button::before {
+    top: -1rem;
+  }
+
+  .mobile-nav button::after {
+    top: 1rem;
+  }
+}
