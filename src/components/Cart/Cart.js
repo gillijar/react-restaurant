@@ -30,7 +30,9 @@ const Cart = () => {
   return (
     <section className={classes.cart}>
       <div className={classes["cart-container"]}>
-        {cartItems.length === 0 && <p>Empty cart</p>}
+        {cartItems.length === 0 && (
+          <p className={classes["empty-cart"]}>Your cart is currently empty.</p>
+        )}
         {cartItems.length > 0 && (
           <Fragment>
             <div className={classes["cart-container__total-price"]}>
