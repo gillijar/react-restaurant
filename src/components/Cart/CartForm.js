@@ -1,3 +1,7 @@
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/cart-items";
+import { useHistory } from "react-router";
+
 import GlobalButton from "../UI/GlobalButton";
 import useInput from "../../hooks/use-input";
 
@@ -7,6 +11,9 @@ const isNotEmpty = (value) => value.trim() !== "";
 const isFiveChars = (value) => value.length === 5;
 
 const CartForm = (props) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   // Entered name hook
   const {
     value: enteredName,
@@ -14,7 +21,6 @@ const CartForm = (props) => {
     hasError: enteredNameHasError,
     valueChangeHandler: enteredNameChangeHandler,
     valueBlurHandler: enteredNameBlurHandler,
-    reset: resetName,
   } = useInput(isNotEmpty);
 
   // Entered address hook
@@ -24,7 +30,6 @@ const CartForm = (props) => {
     hasError: enteredAddressHasError,
     valueChangeHandler: enteredAddressChangeHandler,
     valueBlurHandler: enteredAddressBlurHandler,
-    reset: resetAddress,
   } = useInput(isNotEmpty);
 
   // Entered city hook
@@ -34,7 +39,6 @@ const CartForm = (props) => {
     hasError: enteredCityHasError,
     valueChangeHandler: enteredCityChangeHandler,
     valueBlurHandler: enteredCityBlurHandler,
-    reset: resetCity,
   } = useInput(isNotEmpty);
 
   // Entered postal hook
@@ -44,8 +48,27 @@ const CartForm = (props) => {
     hasError: enteredPostalHasError,
     valueChangeHandler: enteredPostalChangeHandler,
     valueBlurHandler: enteredPostalBlurHandler,
-    reset: resetPostal,
   } = useInput(isFiveChars);
+
+  const formIsValid =
+    enteredNameIsValid &&
+    enteredAddressIsValid &&
+    enteredCityIsValid &&
+    enteredPostalIsValid;
+
+  const submitOrderHandler = (e) => {
+    e.preventDefault();
+
+    if (!formIsValid) {
+      alert("Please fill out the remaining fields.");
+      return;
+    }
+
+    dispatch(cartActions.confirmOrder());
+    dispatch(cartActions.resetState());
+
+    history.push("/home");
+  };
 
   const validClasses = (valueHasError) => {
     return !valueHasError ? "" : "invalid";
@@ -53,7 +76,7 @@ const CartForm = (props) => {
 
   return (
     <div className={classes.form}>
-      <form>
+      <form onSubmit={submitOrderHandler}>
         <div className={classes["form__section"]}>
           <label htmlFor="name">Name</label>
           <input
