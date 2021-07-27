@@ -9,9 +9,6 @@ const inputStateReducer = (state, action) => {
   if (action.type === "BLUR") {
     return { isTouched: true, value: state.value };
   }
-  if (action.type === "RESET") {
-    return { value: "", isTouched: false };
-  }
   return initialInputState;
 };
 
@@ -32,17 +29,12 @@ const useInput = (validateValue) => {
     dispatch({ type: "BLUR" });
   };
 
-  const reset = () => {
-    dispatch({ type: "RESET" });
-  };
-
   return {
     value: inputState.value,
     isValid: valueIsValid,
     hasError,
     valueChangeHandler,
     valueBlurHandler,
-    reset,
   };
 };
 
