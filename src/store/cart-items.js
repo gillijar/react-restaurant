@@ -2,7 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: { items: [], totalQuantity: 0, totalCartPrice: 0 },
+  initialState: {
+    items: [],
+    totalQuantity: 0,
+    totalCartPrice: 0,
+    ordered: false,
+  },
   reducers: {
     addItemToCart(state, action) {
       const newItem = action.payload;
@@ -33,6 +38,14 @@ const cartSlice = createSlice({
         const index = state.items.indexOf(selectedItem);
         state.items.splice(index, 1);
       }
+    },
+    confirmOrder(state) {
+      state.ordered = true;
+    },
+    resetState(state) {
+      state.items = [];
+      state.totalQuantity = 0;
+      state.totalCartPrice = 0;
     },
   },
 });
