@@ -1,18 +1,18 @@
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-items";
-import { useHistory } from "react-router";
 
 import GlobalButton from "../UI/GlobalButton";
 import useInput from "../../hooks/use-input";
 
 import classes from "./CartForm.module.css";
 
+// Helper functions for input validation
 const isNotEmpty = (value) => value.trim() !== "";
 const isFiveChars = (value) => value.length === 5;
 
+// Cart form component
 const CartForm = (props) => {
   const dispatch = useDispatch();
-  const history = useHistory();
 
   // Entered name hook
   const {
@@ -66,8 +66,7 @@ const CartForm = (props) => {
 
     dispatch(cartActions.confirmOrder());
     dispatch(cartActions.resetState());
-
-    history.push("/home");
+    dispatch(cartActions.setCustomerName(enteredName));
   };
 
   const validClasses = (valueHasError) => {
