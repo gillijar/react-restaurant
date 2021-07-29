@@ -8,11 +8,30 @@
   backdrop-filter: blur(0.15rem);
 }
 
-.modal {
+.modal-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
-  padding: 3rem;
+  border-radius: 2rem;
+}
+
+.modal {
+  padding: 3rem 5rem;
+  position: relative;
+}
+
+.modal p {
+  padding: 1.2rem 0;
+  font-size: 1.6rem;
+}
+
+.modal-icon {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  transform: translate(-50%, -50%);
+  font-size: 2.2rem;
+  cursor: pointer;
 }
