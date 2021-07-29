@@ -7,6 +7,7 @@ const cartSlice = createSlice({
     totalQuantity: 0,
     totalCartPrice: 0,
     ordered: false,
+    customerName: "",
   },
   reducers: {
     addItemToCart(state, action) {
@@ -41,6 +42,12 @@ const cartSlice = createSlice({
     },
     confirmOrder(state) {
       state.ordered = true;
+    },
+    returnOrderState(state) {
+      state.ordered = false;
+    },
+    setCustomerName(state, action) {
+      state.customerName = action.payload;
     },
     resetState(state) {
       state.items = [];
