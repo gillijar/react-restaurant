@@ -2,7 +2,6 @@
   padding: 0.5rem 3rem;
   border: 1.5px solid black;
   margin: 0 auto;
-
   border-radius: 5px;
   box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
@@ -42,4 +41,15 @@
 
 .cart-item button:not(:last-child) {
   margin-right: 0.75rem;
+}
+
+@media only screen and (max-width: 738px) {
+  .cart-item {
+    padding: 2rem 3rem;
+  }
+
+  .cart-item button {
+    height: 3rem;
+    width: 3rem;
+  }
 }

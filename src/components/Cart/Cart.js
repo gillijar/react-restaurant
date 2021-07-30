@@ -61,7 +61,7 @@ const Cart = () => {
                 </div>
                 <ul>{cartItemContent}</ul>
                 {!checkoutReady && (
-                  <div className={classes["cart-container__btn"]}>
+                  <div className={classes["cart-container__btn--checkout"]}>
                     <GlobalButton
                       onClick={readyToCheckout}
                       userClass={classes["cart-container__checkout"]}

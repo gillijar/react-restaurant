@@ -26,3 +26,15 @@
   text-align: center;
   font-size: 1.6rem;
 }
+
+@media only screen and (max-width: 738px) {
+  .menu {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 2rem 2rem 0 0;
+  }
+
+  .menu__container {
+    width: 80%;
+  }
+}

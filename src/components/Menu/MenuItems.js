@@ -23,7 +23,9 @@ const MenuItems = (props) => {
     <li className={classes["menu-item"]}>
       <div className={classes["menu-item__details"]}>
         <p>{props.title}</p>
-        <p>${props.price}</p>
+        <p>
+          <strong>${props.price}</strong>
+        </p>
       </div>
       <p className={classes["menu-items__details--description"]}>
         {props.description}

@@ -48,7 +48,7 @@ const Menu = () => {
 
   return (
     <section className={classes.menu}>
-      <div className={classes.menu__container}>
+      <div className={classes["menu__container"]}>
         {isLoading && <LoadingSpinner />}
         {hasError && (
           <p className={classes.error}>

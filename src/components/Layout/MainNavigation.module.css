@@ -4,7 +4,11 @@
   list-style: none;
 }
 
-.nav li:not(:last-child) {
+.desktop-nav {
+  display: flex;
+}
+
+.desktop-nav li {
   margin-right: 7rem;
 }
 
@@ -14,6 +18,7 @@
   border: none;
   cursor: pointer;
   top: 0.5rem;
+  z-index: 0;
 }
 
 .nav-cart__logo {
@@ -59,8 +64,19 @@
 }
 
 @media only screen and (max-width: 738px) {
-  .nav ul {
+  .nav {
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .desktop-nav {
     display: none;
+  }
+
+  .nav-cart {
+    top: 0.75rem;
   }
 
   .mobile-nav {
@@ -91,5 +107,9 @@
 
   .mobile-nav button::after {
     top: 1rem;
+  }
+
+  .nav-cart__logo--badge {
+    padding: 0.2rem;
   }
 }

@@ -16,8 +16,9 @@
 
 .form input {
   width: 100%;
-  padding: 0.75rem;
-  font-size: 1.5rem;
+  padding: 1rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.025rem;
   border-radius: 5px;
   border: 1.5px solid #000;
   outline: none;
@@ -60,4 +61,10 @@
 .errorMsg {
   font-size: 1.6rem;
   color: red;
+}
+
+@media only screen and (max-width: 738px) {
+  .form form {
+    width: 85%;
+  }
 }

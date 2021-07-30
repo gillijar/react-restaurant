@@ -44,3 +44,13 @@
   transform: scale(1);
   box-shadow: none;
 }
+
+@media only screen and (max-width: 738px) {
+  .menu-item:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .menu-item {
+    padding: 2rem 2.5rem;
+  }
+}

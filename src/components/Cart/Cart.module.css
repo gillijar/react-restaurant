@@ -32,6 +32,11 @@
 
 .cart-container__btn {
   padding: 2rem;
+  text-align: center;
+}
+
+.cart-container__btn--checkout {
+  padding: 2rem;
   text-align: end;
 }
 
@@ -42,4 +47,17 @@
 .cart-container__checkout:hover {
   box-shadow: none;
   transform: none;
+}
+
+@media only screen and (max-width: 738px) {
+  .cart {
+    width: 100%;
+    margin: 0 auto;
+    min-height: 88vh;
+    border-radius: 2rem 2rem 0 0;
+  }
+
+  .cart-container {
+    width: 80%;
+  }
 }

@@ -24,3 +24,9 @@ body {
   border: 1.5px solid rgb(255, 1, 1);
   background: rgba(255, 1, 1, 0.25);
 }
+
+@media only screen and (max-width: 738px) {
+  html {
+    font-size: 50%;
+  }
+}
