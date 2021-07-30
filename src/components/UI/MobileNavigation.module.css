@@ -1,0 +1,43 @@
+.mobile-nav {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.925);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(0.3rem);
+}
+
+.mobile-nav ul {
+  text-align: center;
+}
+
+.mobile-nav a:link,
+.mobile-nav a:active,
+.mobile-nav a:visited {
+  font-size: 4rem;
+  color: white;
+  text-decoration: none;
+}
+
+.mobile-nav a.active {
+  color: white;
+  border-bottom: 0.45rem solid white;
+}
+
+.mobile-nav li:not(:last-child) {
+  margin-bottom: 5rem;
+}
+
+.mobile-nav__icon {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  font-size: 4rem;
+  color: white;
+}
