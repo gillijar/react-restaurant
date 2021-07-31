@@ -48,7 +48,7 @@ const Cart = () => {
           <div className={classes["cart-container"]}>
             {cartItems.length === 0 && (
               <p className={classes["empty-cart"]}>
-                Your cart is currently empty.
+                Your cart is currently empty (test).
               </p>
             )}
             {cartItems.length > 0 && (
