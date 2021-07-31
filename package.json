@@ -2,7 +2,7 @@
   "name": "react-git",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://festive-kilby-74d0e3.netlify.app//home",
+  "homepage": "http://gillijar.github.io/home",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.14.1",
