@@ -2,7 +2,7 @@
   "name": "react-git",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://gillijar.github.io/home",
+  "homepage": "https://cranky-austin-8374fe.netlify.app/home",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.14.1",
