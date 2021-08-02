@@ -51,5 +51,6 @@
   .cart-item button {
     height: 3rem;
     width: 3rem;
+    border-radius: 0;
   }
 }
