@@ -1,0 +1,17 @@
+.page-not-found {
+  padding: 5rem 0;
+}
+
+.page-not-found img {
+  width: 30rem;
+}
+
+.page-not-found figcaption {
+  padding: 2rem 0;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.btn {
+  padding: 1.25rem 2.5rem;
+}
