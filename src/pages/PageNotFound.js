@@ -8,7 +8,7 @@ const PageNotFound = () => {
   return (
     <figure className={classes["page-not-found"]}>
       <div>
-        <img src={PageNotFoundLogo} />
+        <img src={PageNotFoundLogo} alt="404 error" />
       </div>
       <figcaption>Couldn't find the requested page. Try again!</figcaption>
       <Link to="/home">
