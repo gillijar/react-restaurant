@@ -37,8 +37,24 @@ const CartItem = (props) => {
           <div className={classes["cart-item__price"]}>
             <p>${props.totalPrice.toFixed(2)}</p>
           </div>
-          <button onClick={removeItemFromCart}>-</button>
-          <button onClick={addItemToCart}>+</button>
+          <div className={classes["cart-item__btn-container"]}>
+            <div>
+              <button
+                className={classes["cart-item__btn"]}
+                onClick={removeItemFromCart}
+              >
+                -
+              </button>
+            </div>
+            <div>
+              <button
+                className={classes["cart-item__btn"]}
+                onClick={addItemToCart}
+              >
+                +
+              </button>
+            </div>
+          </div>
         </div>
       </figure>
     </li>

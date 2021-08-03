@@ -1,5 +1,5 @@
 .form {
-  margin: 2.75rem 0;
+  margin: 2.75rem auto;
   padding: 2.75rem 0 0 0;
   border-top: 2px solid #999;
 }
@@ -8,6 +8,10 @@
   margin: 0 auto;
   width: 70%;
   text-align: start;
+}
+
+.form__section {
+  width: 100%;
 }
 
 .form__section:not(:last-child) {
