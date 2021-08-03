@@ -15,6 +15,7 @@
 
 .mobile-nav ul {
   text-align: center;
+  list-style: none;
 }
 
 .mobile-nav a:link,
