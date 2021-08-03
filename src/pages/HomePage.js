@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 import classes from "./HomePage.module.css";
 import HeroImg from "../img/homepage-hero.jpg";
 import GlobalButton from "../components/UI/GlobalButton";
 
 const HomePage = () => {
+  useEffect(() => {
+    document.title = `QuickEats | Home`;
+  }, []);
+
   const backgroundImage = {
     backgroundImage: `linear-gradient(
     rgba(78, 89, 140, 0.6) 0%,
