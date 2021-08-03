@@ -7,7 +7,7 @@ const CartPage = () => {
 
   useEffect(() => {
     document.title = `QuickEats | Cart (${cartTotal})`;
-  }, []);
+  }, [cartTotal]);
 
   return <Cart />;
 };
