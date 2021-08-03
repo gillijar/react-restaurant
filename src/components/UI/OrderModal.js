@@ -23,7 +23,7 @@ const ModalOverlay = () => {
 
   const hour = new Date().getHours();
   const minute = new Date().getMinutes() + 20;
-  const convertedHour = minute > 60 ? (hour + 1) % 12 : hour % 12;
+  const convertedHour = minute >= 60 ? (hour + 1) % 12 : hour % 12;
   const convertedMinute = String(minute % 60).padStart(2, 0);
 
   const closeModal = () => {
@@ -52,7 +52,13 @@ const ModalOverlay = () => {
         <p>
           Your food should be ready at approximately{" "}
           <strong>
-            {convertedHour}:{convertedMinute} {hour < 12 ? "AM" : "PM"}
+            {convertedHour === 0 ? "12" : convertedHour}:{convertedMinute}{" "}
+            {hour === 0 && minute < 60 && "AM"}
+            {hour === 12 && minute < 60 && "PM"}
+            {hour < 12 && convertedHour !== 0 && "AM"}
+            {hour >= 12 && convertedHour !== 0 && "PM"}
+            {hour === 23 && convertedHour === 0 && "AM"}
+            {hour === 11 && convertedHour === 0 && "PM"}
           </strong>
         </p>
       </div>
