@@ -1,4 +1,5 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import { cartActions } from "../../store/cart-items";
 
 import classes from "./MenuItems.module.css";
@@ -6,6 +7,7 @@ import GlobalButton from "../UI/GlobalButton";
 
 const MenuItems = (props) => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const { id, title, price } = props;
 
@@ -19,8 +21,12 @@ const MenuItems = (props) => {
     );
   };
 
+  const goToDetailPageHandler = () => {
+    history.push(`/menu/${id}`);
+  };
+
   return (
-    <li className={classes["menu-item"]}>
+    <li className={classes["menu-item"]} onClick={goToDetailPageHandler}>
       <div className={classes["menu-item__details"]}>
         <p>{props.title}</p>
         <p>

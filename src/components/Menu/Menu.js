@@ -1,10 +1,14 @@
 import { useEffect, useState, Fragment } from "react";
+import { useDispatch } from "react-redux";
+import { menuItemsActions } from "../../store/menu-items";
 
 import MenuItems from "./MenuItems";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import classes from "./Menu.module.css";
 
 const Menu = () => {
+  const dispatch = useDispatch();
+
   const [menuItems, setMenuItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -45,6 +49,10 @@ const Menu = () => {
 
     fetchMenuData();
   }, []);
+
+  useEffect(() => {
+    dispatch(menuItemsActions.addMenuItems(menuItems));
+  }, [menuItems, dispatch]);
 
   return (
     <section className={classes.menu}>
