@@ -27,7 +27,17 @@
 
 .menu-item__buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-item__buttons a:link,
+.menu-item__buttons a:active,
+.menu-item__buttons a:visited {
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+  font-size: 1.6rem;
+  color: #000;
 }
 
 .more-info {
