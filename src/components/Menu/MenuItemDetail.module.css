@@ -31,11 +31,16 @@
 }
 
 .detail__info--main {
-  font-size: 2.6rem;
+  font-size: 2.4rem;
+}
+
+.title {
+  border-bottom: 1.5px solid #000;
+  font-weight: 500;
 }
 
 .detail__info--description {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
 }
 
 .detail__btn-container {
@@ -47,6 +52,11 @@
   border-radius: 0.75rem;
   padding: 1.25rem 2.5rem;
   font-size: 2rem;
+}
+
+.btn:hover {
+  transform: scale(1);
+  box-shadow: none;
 }
 
 .back {

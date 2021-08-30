@@ -32,14 +32,18 @@ const MenuItemDetail = () => {
   return (
     <div className={classes.detail}>
       <div className={classes["detail__img-container"]}>
-        <img src={item.img} className={classes["detail__img-container--img"]} />
+        <img
+          src={item.img}
+          alt={item.description}
+          className={classes["detail__img-container--img"]}
+        />
         <div className={classes.back} onClick={goBackHandler}>
           <i className="fas fa-arrow-left"></i>
         </div>
       </div>
       <div className={classes["detail__info"]}>
         <div className={classes["detail__info--main"]}>
-          <p>{item.title}</p>
+          <p className={classes.title}>{item.title}</p>
           <p>
             <strong>${item.price}</strong>
           </p>
