@@ -21,5 +21,4 @@ QuickEats is a fictional food/delivery app. It is front-end only but I am open t
 * Once the user has confirmed their information, a modal will pop-up displaying the users order number, name, and estimated time that their food will be ready. They will then be redirected back to the home screen.
 
 ## License
-[MIT]
-(https://choosealicense.com/licenses/mit/)
+[MIT](https://choosealicense.com/licenses/mit/)
