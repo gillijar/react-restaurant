@@ -1,0 +1,19 @@
+.nav {
+  height: 6vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav a:link,
+.nav a:active,
+.nav a:visited {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+}
+
+.active {
+  border-bottom: 1px solid #000;
+}

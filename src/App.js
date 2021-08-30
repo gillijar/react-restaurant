@@ -14,7 +14,6 @@ import "./App.css";
 function App() {
   const dispatch = useDispatch();
 
-  const [menuItems, setMenuItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
 
@@ -43,7 +42,7 @@ function App() {
           transformedMenuData.push(menuObj);
         }
 
-        setMenuItems(transformedMenuData);
+        dispatch(menuItemsActions.addMenuItems(transformedMenuData));
         setIsLoading(false);
       } catch (err) {
         console.log(err.message);
@@ -53,11 +52,7 @@ function App() {
     };
 
     fetchMenuData();
-  }, []);
-
-  useEffect(() => {
-    dispatch(menuItemsActions.addMenuItems(menuItems));
-  }, [menuItems, dispatch]);
+  }, [dispatch]);
 
   return (
     <Layout>
@@ -68,10 +63,10 @@ function App() {
         <Route path="/home">
           <HomePage />
         </Route>
-        <Route path="/menu" exact>
+        <Route path="/menu/:category" exact>
           <MenuPage isLoading={isLoading} hasError={hasError} />
         </Route>
-        <Route path="/menu/:itemId">
+        <Route path="/menu/:category/:itemId">
           <MenuItemDetail />
         </Route>
         <Route path="/cart">

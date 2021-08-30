@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { cartActions } from "../../store/cart-items";
 
@@ -7,6 +7,7 @@ import GlobalButton from "../UI/GlobalButton";
 
 const MenuItems = (props) => {
   const dispatch = useDispatch();
+  const category = useSelector((state) => state.category.category);
 
   const { id, title, price } = props;
 
@@ -32,7 +33,7 @@ const MenuItems = (props) => {
         {props.description}
       </p>
       <div className={classes["menu-item__buttons"]}>
-        <Link to={`/menu/${id}`}>
+        <Link to={`/menu/${category}/${id}`}>
           <p>View item &#8594;</p>
         </Link>
         <GlobalButton

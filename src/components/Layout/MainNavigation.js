@@ -9,6 +9,7 @@ import classes from "./MainNavigation.module.css";
 const MainNavigation = () => {
   const [mobileNav, setMobileNav] = useState(false);
   const cartNumberOfItems = useSelector((state) => state.cart.totalQuantity);
+  const category = useSelector((state) => state.category.category);
 
   const toggleMobileNav = () => {
     setMobileNav((prevState) => !prevState);
@@ -29,7 +30,10 @@ const MainNavigation = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName={classes.active} to="/menu">
+              <NavLink
+                activeClassName={classes.active}
+                to={`/menu/${category}`}
+              >
                 Menu
               </NavLink>
             </li>

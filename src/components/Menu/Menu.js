@@ -1,15 +1,20 @@
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 import MenuItems from "./MenuItems";
+import MenuNav from "./MenuNav";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import classes from "./Menu.module.css";
 
 const Menu = (props) => {
-  const menuItems = useSelector((state) => state.menuItems.items);
+  const menuItemsStore = useSelector((state) => state.menuItems.items);
+  let { category } = useParams();
+  const menuItems = menuItemsStore.filter((item) => item.category === category);
 
   return (
     <section className={classes.menu}>
+      <MenuNav />
       <div className={classes["menu__container"]}>
         {props.isLoading && <LoadingSpinner />}
         {props.hasError && (
@@ -19,7 +24,6 @@ const Menu = (props) => {
         )}
         {!props.isLoading && !props.hasError && (
           <Fragment>
-            <h2>Our Menu</h2>
             <ul>
               {menuItems.map((item) => (
                 <MenuItems
