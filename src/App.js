@@ -1,8 +1,7 @@
 import { Switch, Route, Redirect } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { menuItemsActions } from "./store/menu-items";
-import { favoritesActions } from "./store/favorites";
 
 import Layout from "./components/Layout/Layout";
 import HomePage from "./pages/HomePage";
@@ -56,8 +55,8 @@ function App() {
     fetchMenuData();
   }, [dispatch]);
 
-  const favoritesStoredData = JSON.parse(localStorage.getItem("favorites"));
-  dispatch(favoritesActions.setStoredData(favoritesStoredData));
+  const favorites = useSelector((state) => state.favorites.favorites);
+  console.log(favorites);
 
   return (
     <Layout>
