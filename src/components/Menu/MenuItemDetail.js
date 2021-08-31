@@ -20,7 +20,6 @@ const MenuItemDetail = () => {
 
   const favorites = useSelector((state) => state.favorites.favorites);
   const isFavorited = favorites.find((item) => item.id === id);
-  localStorage.setItem("favorites", JSON.stringify(favorites));
 
   const goBackHandler = () => {
     history.goBack();
