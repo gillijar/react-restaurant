@@ -37,6 +37,11 @@ const MainNavigation = () => {
                 Menu
               </NavLink>
             </li>
+            <li>
+              <NavLink activeClassName={classes.active} to={`/favorites`}>
+                Favorites
+              </NavLink>
+            </li>
           </div>
           <li>
             <NavLink to="/cart" className={classes["nav-cart"]}>

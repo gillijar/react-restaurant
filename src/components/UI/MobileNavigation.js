@@ -42,6 +42,15 @@ const MobileNavigation = (props) => {
             <li>
               <NavLink
                 activeClassName={classes.active}
+                to={`/favorites`}
+                onClick={props.closeMobileNav}
+              >
+                Favorites
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                activeClassName={classes.active}
                 to="/cart"
                 onClick={props.closeMobileNav}
               >
