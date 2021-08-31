@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { cartActions } from "../../store/cart-items";
+import { favoritesActions } from "../../store/favorites";
+import { ReactComponent as FavoriteLogoOutlined } from "../../icons/heart-outlined.svg";
+import { ReactComponent as FavoriteLogo } from "../../icons/heart.svg";
 import GlobalButton from "../UI/GlobalButton";
 
 import classes from "./MenuItemDetail.module.css";
@@ -12,12 +16,15 @@ const MenuItemDetail = () => {
   const menuItem = useSelector((state) => state.menuItems.items);
   const { itemId } = useParams();
   const item = menuItem.find((item) => item.id === itemId);
+  const { id, title, price } = item;
+
+  const favorites = useSelector((state) => state.favorites.favorites);
+  const isFavorited = favorites.find((item) => item.id === id);
+  localStorage.setItem("favorites", JSON.stringify(favorites));
 
   const goBackHandler = () => {
     history.goBack();
   };
-
-  const { id, title, price } = item;
 
   const addToCartHandler = () => {
     dispatch(
@@ -27,6 +34,19 @@ const MenuItemDetail = () => {
         price,
       })
     );
+  };
+
+  const toggleFavoriteHandler = () => {
+    if (!isFavorited) {
+      dispatch(
+        favoritesActions.addFavorite({
+          id,
+          title,
+        })
+      );
+    } else {
+      dispatch(favoritesActions.removeFavorite(id));
+    }
   };
 
   return (
@@ -39,6 +59,21 @@ const MenuItemDetail = () => {
         />
         <div className={classes.back} onClick={goBackHandler}>
           <i className="fas fa-arrow-left"></i>
+        </div>
+      </div>
+      <div className={classes["detail__favorites"]}>
+        <div
+          className={classes["detail__favorites-container"]}
+          onClick={toggleFavoriteHandler}
+        >
+          {!isFavorited && (
+            <FavoriteLogoOutlined
+              className={classes["detail__favorites-icon"]}
+            />
+          )}
+          {isFavorited && (
+            <FavoriteLogo className={classes["detail__favorites-icon"]} />
+          )}
         </div>
       </div>
       <div className={classes["detail__info"]}>
