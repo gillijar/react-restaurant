@@ -10,9 +10,13 @@ const Favorites = () => {
     <section className={classes.favorites}>
       <h1>This page is currently still being built</h1>
       <ul>
-        {favorites.map((item) => (
-          <FavoritesItem key={item.id} id={item.id} title={item.title} />
-        ))}
+        {!favorites && (
+          <p>You currently don't have any favorites. Add some items!</p>
+        )}
+        {favorites &&
+          favorites.map((item) => (
+            <FavoritesItem key={item.id} id={item.id} title={item.title} />
+          ))}
       </ul>
     </section>
   );
