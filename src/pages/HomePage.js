@@ -24,7 +24,7 @@ const HomePage = () => {
     <section className={classes["home-page"]}>
       <div className={classes["home-page__hero"]} style={backgroundImage}>
         <h1>Don't starve, just order!</h1>
-        <Link to="/menu" className={classes["menu-link"]}>
+        <Link to="/menu/entrees" className={classes["menu-link"]}>
           <GlobalButton type="button" userClass={classes.button}>
             View Our Menu
           </GlobalButton>
