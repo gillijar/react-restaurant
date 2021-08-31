@@ -10,6 +10,7 @@ import MenuItemDetail from "./components/Menu/MenuItemDetail";
 import CartPage from "./pages/CartPage";
 import PageNotFound from "./pages/PageNotFound";
 import "./App.css";
+import Favorites from "./components/Favorites/Favorites";
 
 function App() {
   const dispatch = useDispatch();
@@ -68,6 +69,9 @@ function App() {
         </Route>
         <Route path="/menu/:category/:itemId">
           <MenuItemDetail />
+        </Route>
+        <Route path="/favorites">
+          <Favorites />
         </Route>
         <Route path="/cart">
           <CartPage />
