@@ -1,7 +1,8 @@
 import { Switch, Route, Redirect } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 import { menuItemsActions } from "./store/menu-items";
+import { favoritesActions } from "./store/favorites";
 
 import Layout from "./components/Layout/Layout";
 import HomePage from "./pages/HomePage";
@@ -9,19 +10,15 @@ import MenuPage from "./pages/MenuPage";
 import MenuItemDetail from "./components/Menu/MenuItemDetail";
 import CartPage from "./pages/CartPage";
 import PageNotFound from "./pages/PageNotFound";
-import "./App.css";
 import Favorites from "./components/Favorites/Favorites";
+import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [hasError, setHasError] = useState(false);
-
+  // Loading the menu data from the API so that once app loads menu will never be re rendered until user leaves or reloads app
   useEffect(() => {
     const fetchMenuData = async () => {
-      setIsLoading(true);
-
       try {
         const response = await fetch(
           "https://react-ecommerce-17663-default-rtdb.firebaseio.com/meals.json"
@@ -44,19 +41,21 @@ function App() {
         }
 
         dispatch(menuItemsActions.addMenuItems(transformedMenuData));
-        setIsLoading(false);
       } catch (err) {
         console.log(err.message);
-        setHasError(true);
-        setIsLoading(false);
       }
     };
 
     fetchMenuData();
   }, [dispatch]);
 
-  const favorites = useSelector((state) => state.favorites.favorites);
-  console.log(favorites);
+  // Checking for local storage to set users favorites when app loads
+  useEffect(() => {
+    if (localStorage.length !== 0) {
+      const test = JSON.parse(localStorage.getItem("favorites"));
+      dispatch(favoritesActions.setStoredData(test));
+    }
+  }, [dispatch]);
 
   return (
     <Layout>
@@ -68,7 +67,7 @@ function App() {
           <HomePage />
         </Route>
         <Route path="/menu/:category" exact>
-          <MenuPage isLoading={isLoading} hasError={hasError} />
+          <MenuPage />
         </Route>
         <Route path="/menu/:category/:itemId">
           <MenuItemDetail />

@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { useSelector } from "react-redux";
 
 import classes from "./Favorites.module.css";
@@ -8,15 +9,25 @@ const Favorites = () => {
 
   return (
     <section className={classes.favorites}>
-      <h1>This page is currently still being built</h1>
       <ul>
-        {!favorites && (
-          <p>You currently don't have any favorites. Add some items!</p>
+        {favorites.length === 0 && (
+          <p>You don't have any favorites. Add some items!</p>
         )}
-        {favorites &&
-          favorites.map((item) => (
-            <FavoritesItem key={item.id} id={item.id} title={item.title} />
-          ))}
+        {favorites.length > 0 && (
+          <Fragment>
+            <h2>Your Favorites</h2>
+            {favorites.map((item) => (
+              <FavoritesItem
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                img={item.img}
+                category={item.category}
+                description={item.description}
+              />
+            ))}
+          </Fragment>
+        )}
       </ul>
     </section>
   );

@@ -4,12 +4,21 @@
   margin: 3.5rem auto;
   background: white;
   border-radius: 2rem;
-  text-align: center;
+  text-align: start;
   padding: 3rem;
 }
 
 .favorites ul {
   list-style: none;
+}
+
+.favorites p {
+  font-size: 1.8rem;
+}
+
+.favorites h2 {
+  font-size: 2rem;
+  padding-bottom: 2rem;
 }
 
 @media only screen and (max-width: 738px) {
