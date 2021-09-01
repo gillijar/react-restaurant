@@ -13,11 +13,6 @@ QuickEats is a fictional food/delivery app. It is front-end only but I am open t
 
 ## How to use this project
 * Upon loading the home screen, the user can choose the action button or the navigation to access the applications pages. On mobile the navigation is a hamburger menu on the top right that will give the user access to all the applications pages.
-Desktop
-<img width="297" alt="readme-1" src="https://user-images.githubusercontent.com/65259871/131697766-6f3660f2-6563-49b2-af5c-04764ac25eb4.png">
-
-Mobile
-<img width="155" alt="readme-2" src="https://user-images.githubusercontent.com/65259871/131697801-b92968fb-b098-4fa0-82e4-04b441c3eee0.png">
 * The menu is made up of 3 categories (Appetizers, Entrees, Desserts). The user will be directed to entrees by default, but the navigation at the top of the menu will allow the user to view other items.
 * On each item is a "View Info" link that when clicked will redirect the user to a detailed page about that item. The back button on the details page will take the user back to their previous spot in the menu.
 * On each item and in the details page of each item is an "Add to Cart" button that will add 1 of that item to the cart.
