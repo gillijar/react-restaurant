@@ -15,7 +15,7 @@ const MenuItemDetail = () => {
   const menuItem = useSelector((state) => state.menuItems.items);
   const { itemId } = useParams();
   const item = menuItem.find((item) => item.id === itemId);
-  const { id, title, price } = item;
+  const { id, title, price, img, category } = item;
 
   const favorites = useSelector((state) => state.favorites.favorites);
   const isFavorited = favorites.find((item) => item.id === id);
@@ -40,6 +40,8 @@ const MenuItemDetail = () => {
         favoritesActions.addFavorite({
           id,
           title,
+          img,
+          category,
         })
       );
     } else {
