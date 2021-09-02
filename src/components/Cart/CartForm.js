@@ -16,7 +16,6 @@ const CartForm = (props) => {
 
   // State for pickup/delivery
   const pickup = useSelector((state) => state.cart.pickup);
-  console.log(pickup);
 
   // Entered name hook
   const {
