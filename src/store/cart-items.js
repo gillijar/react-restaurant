@@ -8,6 +8,7 @@ const cartSlice = createSlice({
     totalCartPrice: 0,
     ordered: false,
     customerName: "",
+    pickup: true,
   },
   reducers: {
     addItemToCart(state, action) {
@@ -53,6 +54,12 @@ const cartSlice = createSlice({
       state.items = [];
       state.totalQuantity = 0;
       state.totalCartPrice = 0;
+    },
+    setPickup(state) {
+      state.pickup = true;
+    },
+    setDelivery(state) {
+      state.pickup = false;
     },
   },
 });

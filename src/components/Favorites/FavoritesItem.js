@@ -20,9 +20,11 @@ const FavoritesItem = (props) => {
         </div>
         <div className={classes.info}>
           <p>{props.title}</p>
-          <Link to={`/menu/${props.category}/${props.id}`}>
-            View item &#8594;
-          </Link>
+          <div>
+            <Link to={`/menu/${props.category}/${props.id}`}>
+              View item &#8594;
+            </Link>
+          </div>
         </div>
         <FavoriteLogo
           className={classes.logo}
