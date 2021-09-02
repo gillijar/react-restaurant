@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/cart-items";
 
 import GlobalButton from "../UI/GlobalButton";
@@ -13,6 +13,10 @@ const isFiveChars = (value) => value.length === 5;
 // Cart form component
 const CartForm = (props) => {
   const dispatch = useDispatch();
+
+  // State for pickup/delivery
+  const pickup = useSelector((state) => state.cart.pickup);
+  console.log(pickup);
 
   // Entered name hook
   const {
@@ -73,8 +77,30 @@ const CartForm = (props) => {
     return !valueHasError ? "" : "invalid";
   };
 
+  const setPickupHandler = () => {
+    dispatch(cartActions.setPickup());
+  };
+
+  const setDeliveryHandler = () => {
+    dispatch(cartActions.setDelivery());
+  };
+
   return (
     <div className={classes.form}>
+      <div className={classes["form__detail"]}>
+        <p
+          className={pickup ? classes.active : classes.inactive}
+          onClick={setPickupHandler}
+        >
+          Pickup
+        </p>
+        <p
+          className={!pickup ? classes.active : classes.inactive}
+          onClick={setDeliveryHandler}
+        >
+          Delivery
+        </p>
+      </div>
       <form onSubmit={submitOrderHandler}>
         <div className={classes["form__section"]}>
           <label htmlFor="name">Name</label>

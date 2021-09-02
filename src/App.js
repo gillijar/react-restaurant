@@ -10,7 +10,7 @@ import MenuPage from "./pages/MenuPage";
 import MenuItemDetail from "./components/Menu/MenuItemDetail";
 import CartPage from "./pages/CartPage";
 import PageNotFound from "./pages/PageNotFound";
-import Favorites from "./components/Favorites/Favorites";
+import FavoritesPage from "./pages/FavoritesPage";
 import "./App.css";
 
 function App() {
@@ -73,7 +73,7 @@ function App() {
           <MenuItemDetail />
         </Route>
         <Route path="/favorites">
-          <Favorites />
+          <FavoritesPage />
         </Route>
         <Route path="/cart">
           <CartPage />

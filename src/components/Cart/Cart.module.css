@@ -20,10 +20,15 @@
 }
 
 .cart-container__total-price {
-  padding: 0 2rem;
   margin-bottom: 1.5rem;
   font-size: 2rem;
-  text-align: end;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.order-pickup {
+  font-size: 1.6rem;
 }
 
 .cart-container__total-price label {

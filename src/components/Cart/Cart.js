@@ -16,6 +16,7 @@ const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const totalCartPrice = useSelector((state) => state.cart.totalCartPrice);
   const orderSummary = useSelector((state) => state.cart.ordered);
+  const pickup = useSelector((state) => state.cart.pickup);
 
   const [checkoutReady, setCheckoutReady] = useState(false);
 
@@ -54,6 +55,11 @@ const Cart = () => {
             {cartItems.length > 0 && (
               <Fragment>
                 <div className={classes["cart-container__total-price"]}>
+                  <div>
+                    <p className={classes["order-pickup"]}>
+                      Order for <b>{pickup ? "Pickup" : "Delivery"}</b>
+                    </p>
+                  </div>
                   <div>
                     <label htmlFor="total-cart-price>">Total:</label>
                     <p id="total-cart-price">${totalCartPrice.toFixed(2)}</p>
