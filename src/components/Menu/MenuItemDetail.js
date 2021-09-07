@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { cartActions } from "../../store/cart-items";
 import { favoritesActions } from "../../store/favorites";
 import { ReactComponent as FavoriteLogoOutlined } from "../../icons/heart-outlined.svg";
@@ -8,14 +8,11 @@ import GlobalButton from "../UI/GlobalButton";
 
 import classes from "./MenuItemDetail.module.css";
 
-const MenuItemDetail = () => {
+const MenuItemDetail = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const menuItem = useSelector((state) => state.menuItems.items);
-  const { itemId } = useParams();
-  const item = menuItem.find((item) => item.id === itemId);
-  const { id, title, price, img, category } = item;
+  const { id, title, price, img, category, description } = props;
 
   const favorites = useSelector((state) => state.favorites.favorites);
   const isFavorited = favorites.find((item) => item.id === id);
@@ -53,8 +50,8 @@ const MenuItemDetail = () => {
     <div className={classes.detail}>
       <div className={classes["detail__img-container"]}>
         <img
-          src={item.img}
-          alt={item.description}
+          src={img}
+          alt={description}
           className={classes["detail__img-container--img"]}
         />
         <div className={classes.back} onClick={goBackHandler}>
@@ -78,13 +75,13 @@ const MenuItemDetail = () => {
       </div>
       <div className={classes["detail__info"]}>
         <div className={classes["detail__info--main"]}>
-          <p className={classes.title}>{item.title}</p>
+          <p className={classes.title}>{title}</p>
           <p>
-            <strong>${item.price}</strong>
+            <strong>${price}</strong>
           </p>
         </div>
         <div className={classes["detail__info--description"]}>
-          <p>{item.description}</p>
+          <p>{description}</p>
         </div>
       </div>
       <div className={classes["detail__btn-container"]}>

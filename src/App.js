@@ -7,7 +7,7 @@ import { favoritesActions } from "./store/favorites";
 import Layout from "./components/Layout/Layout";
 import HomePage from "./pages/HomePage";
 import MenuPage from "./pages/MenuPage";
-import MenuItemDetail from "./components/Menu/MenuItemDetail";
+import MenuItemDetailPage from "./pages/MenuItemDetailPage";
 import CartPage from "./pages/CartPage";
 import PageNotFound from "./pages/PageNotFound";
 import FavoritesPage from "./pages/FavoritesPage";
@@ -70,7 +70,7 @@ function App() {
           <MenuPage />
         </Route>
         <Route path="/menu/:category/:itemId">
-          <MenuItemDetail />
+          <MenuItemDetailPage />
         </Route>
         <Route path="/favorites">
           <FavoritesPage />
