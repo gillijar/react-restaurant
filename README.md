@@ -1,15 +1,16 @@
 # QuickEats React Restaurant
 
-QuickEats is a fictional food/delivery app. It is front-end only but I am open to pull requests for back-end.
+QuickEats is a fictional food/delivery app.
 
 ## Technologies
 * React.js
 * React Router
 * Redux/Redux toolkit
+* Firebase
 
 ## Future Implementations
-* Adding user accounts to store the users order history and favorites
 * Ability to add a certain quantity of items instead of just one at a time
+* Add a back-end with Node.js and mongoDB.
 
 ## How to use this project
 * Upon loading the home screen, the user can choose the action button or the navigation to access the applications pages. On mobile the navigation is a hamburger menu on the top right that will give the user access to all the applications pages.
